@@ -18,8 +18,9 @@ public class Main {
         System.out.println("\nЗадача 1 ");
         int deposit = 0;
         int contribution = 15_000;
+        int depositGoal = 2_459_000;
         int month = 0;
-        while (deposit <= 2_459_000) {
+        while (deposit <= depositGoal) {
             // deposit += deposit + deposit * 1 /100 + contribution;
             deposit += contribution;
             month++;
@@ -46,12 +47,13 @@ public class Main {
     public static void task3() {
         // Код для задачи 3 Расчет численности населения на 10 лет
         System.out.println("\nЗадача 3");
-        int citizenPopulation = 12_000_000;
-        int citizenFertility = 17;
-        int citizenMortality = 8;
+        int citizenPopulation = 12_000_000 ;
+        int citizenFertility = 17 ;
+        int citizenMortality = 8 ;
+        int citizenAnnualRase = citizenFertility - citizenMortality ;
         System.out.println("Начальная численность населения " + String.format("%,d", citizenPopulation));
         for (int year = 1; year <= 10; year++) {
-            citizenPopulation += citizenPopulation / 1000 * (citizenFertility - citizenMortality);
+            citizenPopulation += citizenPopulation / 1000 * citizenAnnualRase ;
             System.out.println("Год " + year + ", численность населения составляет " + String.format("%,d", citizenPopulation));
         }
     }
@@ -59,10 +61,11 @@ public class Main {
     public static void task4() {
         // Код для задачи 4 Расчет накоплений при постоянном депозите с %. Округление копеек на результпт не влияют
         System.out.println("\nЗадача 4 ");
-        int deposit = 15_000;  // Расчет производим в целых рублях
-        int bankInterest = 7;
+        int deposit = 15_000 ;  // Расчет производим в целых рублях
+        int bankInterest = 7 ;
+        int depositGoal = 12_000_000 ;
         int month = 0;
-        while (deposit <= 12_000_000) {
+        while (deposit <= depositGoal ) {
             deposit += deposit * bankInterest / 100;
             month++;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + String.format("%,d", deposit) + " рублей");
@@ -71,8 +74,9 @@ public class Main {
 
         double depositD = 15_000.00;      // Расчет производим в рублях и копейках
         double bankInterestD = 7.0 / 100;
+        double depositGoalD = 12_000_000.00 ;
         int monthD = 0;
-        while (depositD <= 12_000_000.00) {
+        while ( depositD <= depositGoalD ) {
             depositD += depositD * bankInterestD;
             monthD++;
             System.out.println("Месяц " + monthD + ", сумма накоплений равна " + String.format("%1$,.2f", depositD) + " рублей");
@@ -85,6 +89,7 @@ public class Main {
         System.out.println("\nЗадача 5 ");
         double deposit = 15_000.00;     // Первоначальный вклад в рублях и копейках
         double bankInterest = 7.0 / 100;  // Банковский процент
+        double depositGoal = 12_000_000.00 ;
         int month = 0;                    // Месяцы накопления
         do {
             deposit += deposit * bankInterest;
@@ -93,7 +98,7 @@ public class Main {
                 System.out.println("Месяц " + month + ", сумма накоплений равна " + String.format("%1$,.2f", deposit) + " рублей");
             }
         }
-        while (deposit <= 12_000_000.00);
+        while ( deposit <= depositGoal );
         System.out.println("Результат: для накопления потребуется " + month + " месяцев");
     }
 
