@@ -2,6 +2,7 @@ public class Main {
     public static void main(String[] args) {
         // Циклы. Часть 2
         System.out.println("\nЦиклы. Часть 2.");
+
         task1();  // Метод для задачи 1
         task2();  // Метод для задачи 2
         task3();  // Метод для задачи 3
